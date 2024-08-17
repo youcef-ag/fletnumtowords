@@ -45,11 +45,7 @@ jobs:
       uses: subosito/flutter-action@v2
       with:
         flutter-version: ${{ env.FLUTTER_VERSION }}
-
-    - name: Copy app_config.json
-      run: |
-        cp app_config.json build/aab/
-
+        
     - name: Flet Build AAB
       run: |
         flutter config --no-analytics
@@ -91,10 +87,6 @@ jobs:
         distribution: 'temurin'
         java-version: '21'
 
-    - name: Copy app_config.json
-      run: |
-        cp app_config.json build/apk/
-
     - name: Flet Build APK
       run: |
         flutter config --no-analytics
@@ -129,10 +121,6 @@ jobs:
       uses: subosito/flutter-action@v2
       with:
         flutter-version: ${{ env.FLUTTER_VERSION }}
-
-    - name: Copy app_config.json
-      run: |
-        cp app_config.json build/ipa/
         
     - name: Flet Build IPA
       run: |
