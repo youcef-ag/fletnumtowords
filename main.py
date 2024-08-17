@@ -14,6 +14,7 @@ def main(page: ft.Page):
 
     # Fichier de configuration pour sauvegarder les préférences
     config_file = "app_config.json"
+    
 
     # Fonction pour charger la configuration
     def load_or_create_config():
@@ -26,6 +27,7 @@ def main(page: ft.Page):
                 json.dump(default_config, f)
             return default_config
 
+    load_or_create_config()
     # Fonction pour sauvegarder la configuration
     def save_config(config):
         with open(config_file, "w") as f:
